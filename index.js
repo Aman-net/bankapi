@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 const apiData = require("./bank_branches.json")
 
 app.get("/", (req, res) => {
-    res.send("This api works at adress /api/banks")
+    res.status(200).send("This api works at adress /api/banks")
 })
 
 app.get(`/api/banks`, (req, res) => {
@@ -26,10 +26,10 @@ app.get(`/api/banks`, (req, res) => {
             (state ? state == item.state : true)
         )
     })
-
-    res.send(narr)
+    if (narr.length == 0) res.status(404).send("Bank branch not found")
+    res.status(200).send(narr)
 })
 
 app.listen(port, () => {
-    console.log("I am live again" + port)
+    console.log("I am live again at :" + port)
 })
