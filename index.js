@@ -30,26 +30,6 @@ app.get(`/api/banks`, (req, res) => {
     res.send(narr)
 })
 
-// app.get(`/bankId/:id`, (req, res) => {
-//     let a = [...apiData]
-//     let b = a.filter((k) => k.bank_id == req.params.id)
-//     res.send(b)
-// })
-
-// app.get(`/bankId/:id/city/:city`, (req, res) => {
-//     let a = [...apiData]
-//     let b = a.filter(
-//         (k) => k.bank_id == req.params.id && k.city == req.params.city
-//     )
-//     res.send(b)
-// })
-
-// app.get(`/ifsc/:id`, (req, res) => {
-//     let a = [...apiData]
-//     let b = a.filter((k) => k.ifsc == req.params.id)
-//     res.send(b)
-// })
-
 app.listen(port, () => {
     console.log("I am live again" + port)
 })
